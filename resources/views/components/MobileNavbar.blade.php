@@ -21,7 +21,7 @@
                     </a>
                 </div>
                 <div class="col nav-item active">
-                    <a href="#" class="d-block text-decoration-none text-reset">
+                    <a href="{{route('profile.login')}}" class="d-block text-decoration-none text-reset">
                         <div class="nav-icon"><i class="fas fa-user"></i></div>
                         <div>Profile</div>
                     </a>

@@ -76,38 +76,38 @@ function initCharts() {
     setInterval(updateStats, 5000);
 }
 
-function updateStats() {
-    // Simulate live data updates
-    const stats = [
-        { selector: '.card:nth-child(1) .h5', min: 2400, max: 2600 },
-        { selector: '.card:nth-child(2) .h5', min: 12000, max: 13000 },
-        { selector: '.card:nth-child(3) .h5', min: 1000, max: 1500 },
-        { selector: '.card:nth-child(4) .h5', min: 15, max: 25 }
-    ];
+// function updateStats() {
+//     // Simulate live data updates
+//     const stats = [
+//         { selector: '.card:nth-child(1) .h5', min: 2400, max: 2600 },
+//         { selector: '.card:nth-child(2) .h5', min: 12000, max: 13000 },
+//         { selector: '.card:nth-child(3) .h5', min: 1000, max: 1500 },
+//         { selector: '.card:nth-child(4) .h5', min: 15, max: 25 }
+//     ];
 
-    stats.forEach(stat => {
-        const element = document.querySelector(stat.selector);
-        if (element) {
-            const current = parseInt(element.textContent.replace(/,/g, ''));
-            const newValue = Math.floor(Math.random() * (stat.max - stat.min + 1)) + stat.min;
-            if (Math.abs(newValue - current) > 50) {
-                // Animate the change
-                animateValue(element, current, newValue, 1000);
-            }
-        }
-    });
-}
+//     stats.forEach(stat => {
+//         const element = document.querySelector(stat.selector);
+//         if (element) {
+//             const current = parseInt(element.textContent.replace(/,/g, ''));
+//             const newValue = Math.floor(Math.random() * (stat.max - stat.min + 1)) + stat.min;
+//             if (Math.abs(newValue - current) > 50) {
+//                 // Animate the change
+//                 animateValue(element, current, newValue, 1000);
+//             }
+//         }
+//     });
+// }
 
-function animateValue(element, start, end, duration) {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        const value = Math.floor(progress * (end - start) + start);
-        element.textContent = value.toLocaleString();
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    };
-    window.requestAnimationFrame(step);
-}
+// function animateValue(element, start, end, duration) {
+//     let startTimestamp = null;
+//     const step = (timestamp) => {
+//         if (!startTimestamp) startTimestamp = timestamp;
+//         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+//         const value = Math.floor(progress * (end - start) + start);
+//         element.textContent = value.toLocaleString();
+//         if (progress < 1) {
+//             window.requestAnimationFrame(step);
+//         }
+//     };
+//     window.requestAnimationFrame(step);
+// }

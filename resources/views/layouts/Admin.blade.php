@@ -12,11 +12,19 @@
     <link rel="stylesheet" href="{{ asset('css/admin-dashboard.css')}}">
 </head>
 <body>
+  
     <div class="wrapper">
+        
         {{-- nav --}}
         @include('components.Admin.slidbar')
+
+        
+
+
     <!-- Page Content -->
         <div id="content">
+            {{-- Session flashback --}}
+            @include('components.flashbag')
              <!-- Top Navigation -->
              @include('components.Admin.navbar')
               <!-- Dashboard Content -->

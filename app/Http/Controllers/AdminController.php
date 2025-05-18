@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use App\Models\Product;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -11,12 +14,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('components.Admin.Statistice');
+        $countProfiles = Profile::count();
+        $countProduct = Product::count() ;
+        $countMenu = Menu::count() ;
+        return view('components.Admin.Statistice',compact('countProfiles','countProduct','countMenu'));
     }
 
     // statistice 
     public function statistice(){
-        return view('components.Admin.Statistice');
+        $countProfiles = Profile::count();
+        return view('components.Admin.Statistice',compact('countProfiles'));
     }
 
     /**
