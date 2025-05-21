@@ -49,7 +49,18 @@
                                     Image
                                 </label>
                                 <input type="file" class="form-control form-control-lg" name="image" />
-                            </div>                         
+                            </div>   
+                            {{-- Categorie select --}}
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label fw-semibold">
+                                    Categorie
+                                </label>
+                                <select class="form-select" name="categorie">
+                                   @foreach ($categories as $categorie)
+                                       <option value="{{$categorie->categorie_name}}">{{$categorie->categorie_name}}</option>
+                                   @endforeach
+                                </select>
+                            </div>   
                             <!-- Submit Button -->
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary btn-lg">

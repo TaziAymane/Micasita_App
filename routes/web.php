@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/' ,[PagesController::class,'HomePage'])->name('homePage');
+Route::get('/product_categorie/{categorie}',[PagesController::class,'ProductPage'])->name('ProductPage');
 // Admin
 Route::get('/AdminDashboard',[AdminController::class,'index'])->name('admin.dashboard');
 // Route::get('/statistice',[AdminController::class,'statistice'])->name('admin.statistice');

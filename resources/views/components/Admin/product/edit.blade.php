@@ -60,6 +60,23 @@
                                 <input type="file" class="form-control form-control-lg" name="image">
                                 <small class="text-muted">Leave empty to keep current image</small>
                             </div>
+                             {{-- Categorie select --}}
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label fw-semibold">
+                                    Categorie
+                                </label>
+                                <select class="form-select" name="categorie">
+                                    <option value=""></option>
+                                    <option value="pizza">pizza</option>
+                                    <option value="Cheese Cake">Cheese Cake</option>
+                                    <option value="Pancake">Pancake</option>
+                                    <option value="Crepe Sucrées">Crepe Sucrées</option>
+                                    <option value="Petit Déjeuner">Petit Déjeuner</option>
+                                    <option value="Crepe salées">Crepe salées</option>
+                                    <option value="Les Pate">Les Pate</option>
+                                    <option value="Tacos">Tacos</option>
+                                </select>
+                            </div>   
 
                             <!-- Submit Button -->
                             <div class="d-grid gap-2">

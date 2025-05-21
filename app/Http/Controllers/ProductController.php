@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -22,7 +23,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('components.Admin.product.create');
+        $categories = Menu::all();
+        return view('components.Admin.product.create',compact('categories'));
     }
 
     /**
@@ -34,10 +36,13 @@ class ProductController extends Controller
         $request->validate([
             'product_name' => 'required|min:3',
             'price'   => 'required',
-            'image' => 'required|image|mimes:png,jpg,jpeg,svg|max:10240'
+            'image' => 'required|image|mimes:png,jpg,jpeg,svg|max:10240',
+            'categorie' => 'required'
         ]);
+        
         $productName = $request->product_name ;
         $price = $request->price ;
+        $categorie = $request->categorie ;
         $imagePath = null ;
         if($request->hasFile('image')){
             $imagePath = $request->file('image')->store('product','public');
@@ -46,7 +51,8 @@ class ProductController extends Controller
         Product::create([
             'product_name' => $productName ,
             'price'  => $price ,
-            'image'  => $imagePath
+            'image'  => $imagePath,
+            'categorie' => $categorie
         ]);
 
         return redirect()->route('product.index')->with('success','product created with success');
@@ -80,7 +86,8 @@ class ProductController extends Controller
         $validateDate = $request->validate([
             'product_name' => 'required|min:3',
             'price'   => 'required',
-            'image' => 'required|image|mimes:png,jpg,jpeg,svg|max:10240'
+            'image' => 'required|image|mimes:png,jpg,jpeg,svg|max:10240',
+            'categorie' => 'required'
         ]);
           if($request->hasFile('image')){
             if($itemUpdate->image){

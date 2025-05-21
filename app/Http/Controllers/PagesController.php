@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -19,9 +20,13 @@ class PagesController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function ProductPage(Request $request ,$categorie)
     {
-        //
+
+        // dd($request->categorie);
+        $products = Product::where('categorie',$categorie)->get();
+         $categories = Menu::all();
+        return view('components.ProductPage',compact('products','categories'));
     }
 
     /**
