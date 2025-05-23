@@ -8,7 +8,7 @@
             <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-header bg-primary text-white">
-                        <h1 class="h4 mb-0">{{$profile->name}} , Profile</h1>
+                        <h1 class="h4 mb-0">{{$profile->username}} , Profile</h1>
                     </div>
 
                     <div class="card-body">
@@ -21,8 +21,8 @@
                                 
 
                                 <div class="list-group-profile">
-                                    <h5 class="mb-1 text-muted">Complait Name </h5>
-                                    <p class="mb-0 fs-5"><b>{{ $profile->name }} min</b></p>
+                                    <h5 class="mb-1 text-muted">Username </h5>
+                                    <p class="mb-0 fs-5"><b>{{ $profile->username }}</b></p>
                                 </div>
 
                                 <div class="list-group-profile">

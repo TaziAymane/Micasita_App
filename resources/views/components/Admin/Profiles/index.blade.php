@@ -35,14 +35,14 @@
                 </div>
             </div>
 
-            <h2>{{$countProfiles}}</h2>
+            {{-- <h2>Total useres : {{$countProfiles}}</h2> --}}
             <div class="table-responsive">
 
                 <table class="table table-hover mb-0">
                     <thead class="table-light">
                         <tr>
-                            <th scope="col" class="w-5">#ID</th>
-                            <th scope="col">Name</th>
+                            <th scope="col" class="w-5">ID</th>
+                            <th scope="col">UserName</th>
                             <th scope="col">Phone number</th>
                             <th scope="col" class="text">Commande</th>
                             <th scope="col" class="text">Table reservation</th>
@@ -58,7 +58,7 @@
                                     <div class="d-flex align-items-center">
                                         
                                         <div class="flex-grow-1">
-                                            {{ $profile->name }}
+                                            {{ $profile->username }}
                                         </div>
                                     </div>
                                 </td>

@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,8 +35,11 @@ Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->nam
 
 
 //Profiles
-Route::get('/login',[ProfileController::class,'create'])->name('profile.login');
-Route::post('/profile/store',[ProfileController::class,'store'])->name('profile.store');
+Route::get('/show',[LoginController::class,'index'])->name('show.login');
+Route::post('/login',[LoginController::class,'login'])->name('profile.login');
+Route::post('/profile/store',[LoginController::class,'store'])->name('profile.store');
+
+Route::get('/register',[LoginController::class,"register"])->name('profile.register');
 Route::get('/profiles',[ProfileController::class,'index'])->name('profile.index');
 Route::get('/profile/show/{id}',[ProfileController::class,'show'])->name('profile.show');
 Route::get('/profile/edit/{id}',[ProfileController::class,'edit'])->name('profile.edit');

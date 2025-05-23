@@ -9,6 +9,6 @@ class StatisticeController extends Controller
 {
     public function index(){
         $countProfiles = Profile::count();
-        return view('components.Admin.Statistice',compact('countProfiles'))
+        return view('components.Admin.Statistice',compact('countProfiles'));
     }
 }

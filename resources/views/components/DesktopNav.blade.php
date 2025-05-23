@@ -23,7 +23,7 @@
                         <div class="sidebar-nav-icon"><i class="fas fa-home"></i></div>
                         <div>Orders</div>
                     </a>
-                    <a href="{{route('profile.login')}}" class="sidebar-nav-item text-decoration-none text-reset">
+                    <a href="{{route('show.login')}}" class="sidebar-nav-item text-decoration-none text-reset">
                         <div class="sidebar-nav-icon"><i class="fas fa-user"></i></div>
                         <div>Profile</div>
                     </a>
