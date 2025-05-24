@@ -31,6 +31,12 @@
                                         <p class="mb-0 fs-5"><b>{{ $profile->phone }}</b></p>
                                     </p>
                                 </div>
+                                 <div class="list-group-profile">
+                                    <h5 class="mb-1 text-muted">Adress </h5>
+                                    <p class="mb-0 fs-5">
+                                        <p class="mb-0 fs-5"><b>{{ $profile->adress }}</b></p>
+                                    </p>
+                                </div>
                                 <div class="list-group-profile">
                                     <h5 class="mb-1 text-muted">Created at   </h5>
                                     <p class="mb-0 fs-5"><b>{{ $profile->created_at }}</b></p>

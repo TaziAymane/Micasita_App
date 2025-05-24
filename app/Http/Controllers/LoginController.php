@@ -6,6 +6,7 @@ use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -16,7 +17,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $username = $request->username;
-        // $phone = $request->phone ;
+        // $adress = $request->adress ;
         $password = $request->password;
         $values = ['username' => $username, 'password' => $password];
         if (Auth::attempt($values)) {
@@ -31,6 +32,11 @@ class LoginController extends Controller
             );
         }
     }
+    public function logout(){
+        Session::flush();
+        Auth::logout();
+        return redirect()->route('homePage')->with('success','logout with siccess') ;
+    }
     public function register()
     {
         return view('components.Admin.Profiles.register');
@@ -42,6 +48,7 @@ class LoginController extends Controller
         $request->validate([
             'username' => 'required|min:5|max:20',
             'phone' => 'required|min:10|max:13',
+            'adress' => 'nullable',
             'password' => 'required|min:8|max:12'
         ]);
 
@@ -49,6 +56,7 @@ class LoginController extends Controller
         Profile::create([
             'username' => $request->username,
             'phone' => $request->phone,
+            'adress' => $request->adress ,
             'password' => Hash::make($request->password)
         ]);
 

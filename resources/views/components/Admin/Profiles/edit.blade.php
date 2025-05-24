@@ -31,10 +31,10 @@
                             <!-- Name Field -->
                             <div class="mb-3">
                                 <label for="nameInput" class="form-label fw-semibold">
-                                    Name
+                                    UserName
                                 </label>
-                                <input type="text" class="form-control form-control-lg" name="name"
-                                    value="{{ old('name', $profile->name) }}">
+                                <input type="text" class="form-control form-control-lg" name="username"
+                                    value="{{ old('username', $profile->username) }}">
                             </div>
 
                             <!-- Time Take -->
@@ -43,6 +43,12 @@
                                     Phone
                                 </label>
                                 <input type="tel" class="form-control" name="phone" value="{{ old('phone', $profile->phone) }}" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">
+                                    Adress
+                                </label>
+                                <input type="tel" class="form-control" name="adress" value="{{ old('adress', $profile->adress) }}" />
                             </div>
 
                             

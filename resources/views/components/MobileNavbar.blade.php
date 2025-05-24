@@ -15,17 +15,29 @@
                     </a>
                 </div>
                 <div class="col nav-item ">
-                    <a href="#" class="d-block text-decoration-none text-reset">
+                    <a href="{{ route('logout')}}" class="d-block text-decoration-none text-reset">
                         <div class="nav-icon"><i class="fas fa-clipboard-list"></i></div>
                         <div>Orders</div>
                     </a>
                 </div>
-                <div class="col nav-item ">
-                    <a href="{{route('profile.login')}}" class="d-block text-decoration-none text-reset">
+                @auth
+                    <div class="col nav-item ">
+                    <a href="{{route('settings')}}" class="d-block text-decoration-none text-reset">
                         <div class="nav-icon"><i class="fas fa-user"></i></div>
                         <div>Profile</div>
                     </a>
 
                 </div>
+                @endauth
+                @guest
+                     <div class="col nav-item ">
+                    <a href="{{route('show.login')}}" class="d-block text-decoration-none text-reset">
+                        <div class="nav-icon"><i class="fas fa-user"></i></div>
+                        <div>Sign up</div>
+                    </a>
+
+                </div>
+                @endguest
+                
             </div>
         </div>

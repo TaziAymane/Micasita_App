@@ -86,20 +86,11 @@
                                            name="password" value="{{ old('password') }}" 
                                           placeholder="Enter a password">
                                 </div>
-                                @error('name')
-                                    <span class="invalid-feedback d-block" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                               
                             </div>
                                 
 
-                                {{-- <div class="mb-3 form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="remember">
-                                        Remember Me
-                                    </label>
-                                </div> --}}
+                               
 
                                 <div class="d-grid mb-3">
                                     <button type="submit" class="btn btn-primary btn-login py-2">
@@ -107,18 +98,18 @@
                                     </button>
                                 </div>
 
-                                <div class="d-grid mb-3">
+                                {{-- <div class="d-grid mb-3">
                                     <a href="{{ route('profile.register')}}" class="btn btn-primary btn-Register py-2">
                                         Register
                                     </a>
-                                </div>
+                                </div> --}}
 
                             
                             </form>
                         </div>
-                        {{-- <div class="card-footer text-center py-3">
-                            Don't have an account? <a href="">Register here</a>
-                        </div> --}}
+                        <div class="card-footer text-center py-3">
+                            Don't have an account? <a href="{{ route('profile.register')}}">Register here</a>
+                        </div>
                     </div>
                 </div>
             </div>

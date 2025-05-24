@@ -38,8 +38,9 @@ Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->nam
 Route::get('/show',[LoginController::class,'index'])->name('show.login');
 Route::post('/login',[LoginController::class,'login'])->name('profile.login');
 Route::post('/profile/store',[LoginController::class,'store'])->name('profile.store');
-
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::get('/register',[LoginController::class,"register"])->name('profile.register');
+Route::get('/settings',[ProfileController::class,'settings'])->name('settings');
 Route::get('/profiles',[ProfileController::class,'index'])->name('profile.index');
 Route::get('/profile/show/{id}',[ProfileController::class,'show'])->name('profile.show');
 Route::get('/profile/edit/{id}',[ProfileController::class,'edit'])->name('profile.edit');

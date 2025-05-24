@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
-    protected $fillable = ['username' , 'phone','password'];
+    protected $fillable = ['username' , 'phone','password','adress'];
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -28,8 +29,9 @@ class ProfileController extends Controller
     public function update(Request $request,$id){
         $profile = Profile::findOrFail($id);
         $validData = $request->validate([
-            'name' => 'required|min:5|max:20',
-            'phone' => 'required|min:10|max:12'
+            'username' => 'required|min:5|max:20',
+            'phone' => 'required|min:10|max:14',
+            'adress' => 'nullable'
         ]);
 
         $profile->update($validData) ;
@@ -41,5 +43,11 @@ class ProfileController extends Controller
         $profile = Profile::findOrFail($id);
         $profile->delete();
         return redirect()->route('profile.index')->with('success','profile deleted with success');
+    }
+    public function settings(){
+       $user = Auth::user();
+      $profile = Profile::where('id', $user->id)->firstOrFail();
+        // dd($profile);
+        return view('components.Settings',compact('profile','user'));
     }
 }

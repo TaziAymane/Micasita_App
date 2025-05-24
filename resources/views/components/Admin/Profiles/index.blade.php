@@ -44,6 +44,7 @@
                             <th scope="col" class="w-5">ID</th>
                             <th scope="col">UserName</th>
                             <th scope="col">Phone number</th>
+                            <th scope="col">Adress</th>
                             <th scope="col" class="text">Commande</th>
                             <th scope="col" class="text">Table reservation</th>
                             <th scope="col" class="text-center">Actions</th>
@@ -64,6 +65,9 @@
                                 </td>
                                 <td class="text-decoration-none">
                                     {{ $profile->phone }}  
+                                </td>
+                                <td class="text-decoration-none">
+                                    {{ $profile->adress }}  
                                 </td>
                                 <td>
                                     product1
