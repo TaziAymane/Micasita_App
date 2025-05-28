@@ -25,8 +25,9 @@ class PagesController extends Controller
 
         // dd($request->categorie);
         $products = Product::where('categorie',$categorie)->get();
-         $categories = Menu::all();
-        return view('components.ProductPage',compact('products','categories'));
+        $categories_name = Menu::where('categorie_name',$categorie)->get();
+        $categories = Menu::all();
+        return view('components.ProductPage',compact('products','categories','categories_name'));
     }
 
     /**

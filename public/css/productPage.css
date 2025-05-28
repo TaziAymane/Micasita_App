@@ -187,3 +187,99 @@ body {
     padding: 8px;
   }
 }
+
+
+        .product-controls {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .quantity-controls button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            background-color: #f8f9fa;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .order-summary {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            background-color: #ff0000;
+            padding: 15px 25px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-radius: 10px;
+            border: 1px solid #d10000;
+            color: white;
+        }
+        
+        .order-summary h1 {
+            margin: 0;
+            font-size: 18px;
+            color: white;
+        }
+        
+        .order-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .order-total {
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+        }
+        
+        .clear-all-btn {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .clear-all-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* New styles for back button */
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .back-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .back-button:hover {
+            opacity: 0.8;
+        }

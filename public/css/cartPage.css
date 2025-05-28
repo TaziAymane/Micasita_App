@@ -1,0 +1,438 @@
+
+
+.checkout-containerProductCart {
+    padding-top: 0; /* Remove any existing padding-top */
+    width: 100%;
+    background: white;
+    margin: 0 auto;
+}
+
+.status-bar {
+    background: #000;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.headerProductCart {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 1;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.headerProductCart h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    color: #333;
+}
+
+.headerProductCart-icon {
+    width: 24px;
+    height: 24px;
+    color: #666;
+    cursor: pointer;
+}
+
+.restaurant-item {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.restaurant-logo {
+    width: 60px;
+    height: 60px;
+    background: #dc3545;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.restaurant-info {
+    flex: 1;
+}
+
+.restaurant-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.item-details {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.item-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.item-price {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.quantity-btn {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+}
+
+.quantity-btn:hover {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.quantity {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    padding: 16px;
+    margin: 0;
+}
+
+.map-container {
+    height: 200px;
+    background: #f0f0f0;
+    margin: 0 16px;
+    border-radius: 8px;
+    position: relative;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23e8e8e8"/><g stroke="%23ccc" stroke-width="1"><path d="M0 50h400M0 100h400M0 150h400"/><path d="M50 0v200M100 0v200M150 0v200M200 0v200M250 0v200M300 0v200M350 0v200"/></g></svg>');
+}
+
+.map-pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #dc3545;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg) translate(-50%, -50%);
+    transform-origin: 0 0;
+}
+
+.map-pin::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+}
+
+.map-controls {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.map-control-btn {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+}
+
+.google-logo {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+}
+
+.location-info {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.location-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.location-icon {
+    width: 20px;
+    height: 20px;
+    background: #dc3545;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+.location-text {
+    color: #333;
+}
+
+.location-name {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.location-subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.change-address {
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notes-section {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.notes-input {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    background: #f8f9fa;
+    resize: none;
+    min-height: 60px;
+}
+
+.notes-input::placeholder {
+    color: #aaa;
+}
+
+.payment-section {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    cursor: pointer;
+}
+
+.payment-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.payment-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    position: relative;
+}
+
+.payment-radio.selected {
+    border-color: #dc3545;
+}
+
+.payment-radio.selected::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #dc3545;
+    border-radius: 50%;
+}
+
+.payment-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.payment-icon {
+    height: 24px;
+}
+
+.cash-icon {
+    color: #28a745;
+    font-size: 24px;
+}
+
+.cmi-logo {
+    background: #dc3545;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.invoice-section {
+    padding: 16px;
+}
+
+.invoice-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.invoice-label {
+    font-size: 16px;
+    color: #333;
+}
+
+.invoice-value {
+    font-size: 16px;
+    color: #666;
+}
+
+.order-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    width: calc(100% - 32px);
+    cursor: pointer;
+}
+
+.order-button:hover {
+    background: #c82333;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .checkout-container {
+        box-shadow: none;
+    }
+
+    .status-bar {
+        display: flex;
+    }
+
+    .map-container {
+        height: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .status-bar {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .section-title {
+        font-size: 20px;
+    }
+
+    .item-name {
+        font-size: 20px;
+    }
+
+    .item-price {
+        font-size: 18px;
+    }
+
+    .payment-text,
+    .invoice-label,
+    .invoice-value {
+        font-size: 18px;
+    }
+
+    .order-button {
+        font-size: 20px;
+    }
+}

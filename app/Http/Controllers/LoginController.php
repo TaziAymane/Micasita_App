@@ -49,7 +49,7 @@ class LoginController extends Controller
             'username' => 'required|min:5|max:20',
             'phone' => 'required|min:10|max:13',
             'adress' => 'nullable',
-            'password' => 'required|min:8|max:12'
+            'password' => 'required|min:8'
         ]);
 
 

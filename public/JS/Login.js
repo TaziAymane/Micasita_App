@@ -7,7 +7,7 @@ const iti = window.intlTelInput(phoneInput, {
         fetch("https://ipapi.co/json")
             .then(res => res.json())
             .then(data => callback(data.country_code))
-            .catch(() => callback("us"));
+            .catch(() => callback("mo"));
     },
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     separateDialCode: true,
