@@ -11,9 +11,9 @@
                             <div class="sidebar-nav-icon"><i class="fas fa-utensils"></i></div>
                             <div>Table Reservation</div>
                         </a>
-                        <a href="#" class="sidebar-nav-item text-decoration-none text-reset">
+                        <a href="{{ route('product.cart')}}" class="sidebar-nav-item text-decoration-none text-reset">
                             <div class="sidebar-nav-icon"><i class="fas fa-shopping-basket"></i></div>
-                            <div>Wanny Supermarché</div>
+                            <div>cart</div>
                         </a>
                         {{-- <a href="#" class="sidebar-nav-item text-decoration-none text-reset">
                         <div class="sidebar-nav-icon"><i class="fas fa-star"></i></div>

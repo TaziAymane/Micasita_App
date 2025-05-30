@@ -15,9 +15,9 @@
                     </a>
                 </div>
                 <div class="col nav-item ">
-                    <a href="{{ route('logout')}}" class="d-block text-decoration-none text-reset">
+                    <a href="{{ route('product.cart')}}" class="d-block text-decoration-none text-reset">
                         <div class="nav-icon"><i class="fas fa-clipboard-list"></i></div>
-                        <div>Orders</div>
+                        <div>cart</div>
                     </a>
                 </div>
                 @auth
