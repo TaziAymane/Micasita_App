@@ -223,4 +223,35 @@
             renderCart();
         });
     </script>
+    <script>
+document.querySelector('.order-button').addEventListener('click', function () {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    const cartArray = Object.keys(cart).map(key => cart[key]);
+    const notes = document.querySelector('.notes-input').value;
+    const paymentMethod = document.querySelector('.payment-radio.selected').parentElement.innerText.trim();
+
+    fetch("{{ route('placeOrder') }}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+        },
+        body: JSON.stringify({
+            cart: cartArray,
+            notes: notes,
+            payment_method: paymentMethod,
+        })
+    }).then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert(data.message);
+            localStorage.removeItem('cart');
+            window.location.href = '/'; // or order success page
+        } else {
+            alert("Order failed: " + JSON.stringify(data));
+        }
+    });
+});
+</script>
+
 @endsection

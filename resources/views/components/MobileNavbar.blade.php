@@ -31,7 +31,7 @@
                 @endauth
                 @guest
                      <div class="col nav-item ">
-                    <a href="{{route('show.login')}}" class="d-block text-decoration-none text-reset">
+                    <a href="" class="d-block text-decoration-none text-reset">
                         <div class="nav-icon"><i class="fas fa-user"></i></div>
                         <div>Sign up</div>
                     </a>

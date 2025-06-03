@@ -98,8 +98,8 @@
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Phone Number</label>
                                 <div class="input-group intl-tel-input-wrapper">
-                                    <span class="input-group-text"><i class="bi bi-phone"></i></span>
-                                    <input type="tel" class="form-control" name="phone" id="phone" autocomplete="tel" placeholder="Enter your phone number">
+                                    {{-- <span class="input-group-text"><i class="bi bi-phone"></i></span> --}}
+                                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter your phone number">
                                 </div>
                                 <input type="hidden" name="phone_full" id="phone-full">
                             </div>
@@ -139,46 +139,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // document.addEventListener('DOMContentLoaded', function() {
             // Initialize phone number input
-            const phoneInput = document.querySelector("#phone");
-            const iti = window.intlTelInput(phoneInput, {
-                initialCountry: "auto",
-                geoIpLookup: function(callback) {
-                    fetch("https://ipapi.co/json")
-                        .then(res => res.json())
-                        .then(data => callback(data.country_code))
-                        .catch(() => callback("us")); // default to US if lookup fails
-                },
-                separateDialCode: true,
-                preferredCountries: ['us', 'gb', 'ca', 'au', 'in', 'ma', 'fr', 'de'],
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-            });
+            // const phoneInput = document.querySelector("#phone");
+            // const iti = window.intlTelInput(phoneInput, {
+            //     initialCountry: "auto",
+            //     geoIpLookup: function(callback) {
+            //         fetch("https://ipapi.co/json")
+            //             .then(res => res.json())
+            //             .then(data => callback(data.country_code))
+            //             .catch(() => callback("us")); // default to US if lookup fails
+            //     },
+            //     separateDialCode: true,
+            //     preferredCountries: ['us', 'gb', 'ca', 'au', 'in', 'ma', 'fr', 'de'],
+            //     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+            // });
 
             // Update hidden input with full international number before form submission
-            document.getElementById('registrationForm').addEventListener('submit', function(e) {
-                const phoneInput = document.querySelector("#phone");
-                const phoneFullInput = document.querySelector("#phone-full");
+            // document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            //     const phoneInput = document.querySelector("#phone");
+            //     const phoneFullInput = document.querySelector("#phone-full");
                 
-                if (phoneInput.value.trim()) {
-                    if (iti.isValidNumber()) {
-                        phoneFullInput.value = iti.getNumber();
-                    } else {
-                        e.preventDefault();
-                        alert('Please enter a valid phone number');
-                        phoneInput.focus();
-                    }
-                }
-            });
+            //     if (phoneInput.value.trim()) {
+            //         if (iti.isValidNumber()) {
+            //             phoneFullInput.value = iti.getNumber();
+            //         } else {
+            //             e.preventDefault();
+            //             alert('Please enter a valid phone number');
+            //             phoneInput.focus();
+            //         }
+            //     }
+            // });
 
             // Fix for Bootstrap input group with intl-tel-input
-            const inputGroup = document.querySelector('.intl-tel-input-wrapper');
-            const itiContainer = inputGroup.querySelector('.iti');
-            if (itiContainer) {
-                itiContainer.style.width = '100%';
-                inputGroup.style.flexWrap = 'nowrap';
-            }
-        });
+        //     const inputGroup = document.querySelector('.intl-tel-input-wrapper');
+        //     const itiContainer = inputGroup.querySelector('.iti');
+        //     if (itiContainer) {
+        //         itiContainer.style.width = '100%';
+        //         inputGroup.style.flexWrap = 'nowrap';
+        //     }
+        // });
     </script>
 </body>
 </html>

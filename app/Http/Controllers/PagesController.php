@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -13,7 +14,9 @@ class PagesController extends Controller
      */
     public function HomePage()
     {
+        // $user = Auth::user();
         $menus = Menu::all();
+        // dd($user);
         return view('components.HomePage',compact('menus'));
     }
 

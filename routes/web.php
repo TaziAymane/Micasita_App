@@ -9,47 +9,54 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-Route::get('/' ,[PagesController::class,'HomePage'])->name('homePage')->middleware('auth');
-Route::get('/product_categorie/{categorie}',[PagesController::class,'ProductPage'])->name('ProductPage')->middleware('auth');
+
+Route::get('/Auth',[AuthController::class,'loginfORM'])->name('loginfORM') ;
+Route::post('/login',[AuthController::class,'login'])->name('login') ;
+Route::post('/register',[AuthController::class,'store'])->name('register') ;
+
+Route::get('/' ,[PagesController::class,'HomePage'])->name('homePage');
+Route::get('/product_categorie/{categorie}',[PagesController::class,'ProductPage'])->name('ProductPage');
 // Cart route *
 
-Route::get('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('addToCart')->middleware('auth');
-Route::get('/product-cart',[CartController::class,'cart'])->name('product.cart')->middleware('auth');
-// Route::post('/cart-update',[CartController::class,'cartUpdate'])->name('cart.update');
+Route::get('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('addToCart');
+Route::get('/product-cart',[CartController::class,'cart'])->name('product.cart');
+Route::post('/place-order', [CartController::class, 'placeOrder'])->name('placeOrder');
+
 // Admin
-Route::get('/AdminDashboard',[AdminController::class,'index'])->name('admin.dashboard')->middleware('auth');
-// Route::get('/statistice',[AdminController::class,'statistice'])->name('admin.statistice');
+Route::get('/AdminDashboard',[AdminController::class,'index'])->name('admin.dashboard');
+
 //Menu 
-Route::get('/menu',[MenuController::class,'index'])->name('menu.index')->middleware('auth');
-Route::get('/menu/show/{id}',[MenuController::class,'show'])->name('menu.show')->middleware('auth');
-Route::get('menu/create',[MenuController::class,'create'])->name('menu.create')->middleware('auth') ;
-Route::post('menu/store',[MenuController::class,'store'])->name('menu.store')->middleware('auth');
-Route::get('/menu/edit/{id}',[MenuController::class,'edit'])->name('menu.edit')->middleware('auth');
-Route::put('/menu/update/{id}',[MenuController::class,'update'])->name('menu.update')->middleware('auth');
-Route::delete('/menu/destroy/{id}',[MenuController::class,'destroy'])->name('menu.destroy')->middleware('auth');
+Route::get('/menu',[MenuController::class,'index'])->name('menu.index');
+Route::get('/menu/show/{id}',[MenuController::class,'show'])->name('menu.show');
+Route::get('menu/create',[MenuController::class,'create'])->name('menu.create') ;
+Route::post('menu/store',[MenuController::class,'store'])->name('menu.store');
+Route::get('/menu/edit/{id}',[MenuController::class,'edit'])->name('menu.edit');
+Route::put('/menu/update/{id}',[MenuController::class,'update'])->name('menu.update');
+Route::delete('/menu/destroy/{id}',[MenuController::class,'destroy'])->name('menu.destroy');
 
 //Product
-Route::get('/product',[ProductController::class,'index'])->name('product.index')->middleware('auth');
-Route::get('/product/create',[ProductController::class,'create'])->name('product.create')->middleware('auth');
-Route::post('/product/store',[ProductController::class,'store'])->name('product.store')->middleware('auth');
-Route::get('/product/show/{id}',[ProductController::class,'show'])->name('product.show')->middleware('auth');
-Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit')->middleware('auth');
-Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update')->middleware('auth');
-Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy')->middleware('auth');
+Route::get('/product',[ProductController::class,'index'])->name('product.index');
+Route::get('/product/create',[ProductController::class,'create'])->name('product.create');
+Route::post('/product/store',[ProductController::class,'store'])->name('product.store');
+Route::get('/product/show/{id}',[ProductController::class,'show'])->name('product.show');
+Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+Route::put('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
+Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
 
 
 //Profiles
-Route::get('/login',[LoginController::class,'index'])->name('login');
-Route::post('/logi-store',[LoginController::class,'login'])->name('profile.login');
-Route::post('/profile/store',[LoginController::class,'store'])->name('profile.store')->middleware('auth');
-Route::get('/logout',[LoginController::class,'logout'])->name('logout');
-Route::get('/register',[LoginController::class,"register"])->name('profile.register');
-Route::get('/settings',[ProfileController::class,'settings'])->name('settings')->middleware('auth');
+// Route::get('/login',[LoginController::class,'index'])->name('show.login');
+// Route::post('/logi-store',[LoginController::class,'login'])->name('profile.login');
+// Route::post('/profile/store',[LoginController::class,'store'])->name('profile.store');
+// Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+// Route::get('/register',[LoginController::class,"register"])->name('profile.register');
+Route::get('/settings',[ProfileController::class,'settings'])->name('settings');
 Route::get('/profiles',[ProfileController::class,'index'])->name('profile.index');
 Route::get('/profile/show/{id}',[ProfileController::class,'show'])->name('profile.show');
 Route::get('/profile/edit/{id}',[ProfileController::class,'edit'])->name('profile.edit');
-Route::put('/profile/update/{id}',[ProfileController::class,'update'])->name('profile.update')->middleware('auth');
-Route::delete('/profile/destroy/{id}',[ProfileController::class,'destroy'])->name('profile.destroy')->middleware('auth');
+Route::put('/profile/update/{id}',[ProfileController::class,'update'])->name('profile.update');
+Route::delete('/profile/destroy/{id}',[ProfileController::class,'destroy'])->name('profile.destroy');
 
 
