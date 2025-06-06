@@ -3,100 +3,7 @@
     Settings
 @endsection
 @section('content')
-    <style>
-        .navbar {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .card {
-            border: none;
-            box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15);
-            margin-bottom: 1.5rem;
-        }
-
-        .card-header {
-            font-weight: 500;
-        }
-
-        .card-body {
-            padding: 1.5rem;
-        }
-
-        .userdata-pic {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .table th {
-            border-top: none;
-        }
-
-        .ratings i {
-            font-size: 0.9rem;
-        }
-
-        .btn-danger {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-
-        .btn-danger:hover {
-            background-color: #bb2d3b;
-            border-color: #b02a37;
-        }
-
-        .btn-outline-danger {
-            color: #dc3545;
-            border-color: #dc3545;
-        }
-
-        .btn-outline-danger:hover {
-            color: #fff;
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .card-body {
-                padding: 1rem;
-            }
-
-            .userdata-pic {
-                width: 100px;
-                height: 100px;
-            }
-        }
-
-        /* Animation for favorite button */
-        @keyframes heartBeat {
-            0% {
-                transform: scale(1);
-            }
-
-            14% {
-                transform: scale(1.3);
-            }
-
-            28% {
-                transform: scale(1);
-            }
-
-            42% {
-                transform: scale(1.3);
-            }
-
-            70% {
-                transform: scale(1);
-            }
-        }
-
-        .heart-beat {
-            animation: heartBeat 1s;
-            color: #dc3545 !important;
-        }
-    </style>
+<link rel="stylesheet" href="{{ asset('css/settings.css')}}">
     <!-- userdata Section -->
     <div class="container py-5">
         <div class="row">
@@ -190,31 +97,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>#12345</td>
-                                        <td>2023-06-15</td>
-                                        <td>3</td>
-                                        <td>$24.99</td>
-                                        <td><span class="badge bg-success">Delivered</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#12344</td>
-                                        <td>2023-06-10</td>
-                                        <td>2</td>
-                                        <td>$18.50</td>
-                                        <td><span class="badge bg-success">Delivered</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#12343</td>
-                                        <td>2023-06-05</td>
-                                        <td>5</td>
-                                        <td>$42.75</td>
-                                        <td><span class="badge bg-success">Delivered</span></td>
-                                    </tr>
+                                <tbody>
+                                    @foreach ($orders as $order)
+                                        <tr>
+                                            <td>#{{ $order->id }}</td>
+                                            <td>{{ $order->created_at->format('Y-m-d') }}</td>
+                                            <td>{{ $order->items->count() }}</td>
+                                            <td>{{ number_format($order->total_price, 2) }} DH</td>
+                                            <td>
+                                                <span class="badge bg-success">Delivered</span> {{-- Optional: make dynamic --}}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                                 </tbody>
                             </table>
                         </div>
-                        <a href="orders.html" class="btn btn-outline-danger">View All Orders</a>
+                        <a href="{{ route('homePage')}}" class="btn btn-outline-danger">View All Orders</a>
                     </div>
                 </div>
             </div>

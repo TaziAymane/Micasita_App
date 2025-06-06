@@ -45,7 +45,7 @@
 
         <!-- Mobile Bottom Navigation -->
         
-            @include('components.MobileNavbar')
+            {{-- @include('components.MobileNavbar') --}}
         
     </div>
 

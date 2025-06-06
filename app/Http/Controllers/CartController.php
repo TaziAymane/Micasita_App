@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -61,6 +63,46 @@ class CartController extends Controller
 
       
     }
+
+    public function placeOrder(Request $request)
+{
+    $user = Auth::user();
+    if (!$user) {
+        return redirect()->route('login')->with('error', 'You need to be logged in to place an order.');
+    }
+
+    $cartItems = Cart::where('user_id', $user->id)->get();
+
+    if ($cartItems->isEmpty()) {
+        return redirect()->back()->with('error', 'Cart is empty.');
+    }
+
+    $total = 0;
+    foreach ($cartItems as $item) {
+        $total += $item->product->price * $item->quantity;
+    }
+
+    $order = Order::create([
+        'user_id' => $user->id,
+        'total_price' => $total,
+        'payment_method' => $request->input('payment_method', 'card'),
+    ]);
+
+    foreach ($cartItems as $item) {
+        OrderItem::create([
+            'order_id' => $order->id,
+            'product_id' => $item->product_id,
+            'quantity' => $item->quantity,
+            'price' => $item->product->price,
+        ]);
+    }
+
+    Cart::where('user_id', $user->id)->delete();
+
+    return redirect()->route('homePage')->with('success', 'Order placed successfully!');
+}
+
+
     
 }
  

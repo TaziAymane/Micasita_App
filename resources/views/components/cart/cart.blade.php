@@ -70,7 +70,9 @@
                             </div>
 
                             <div class="col-md-2 col-4 mt-2 mt-md-0 text-end">
-                                <div class="price fw-bold text-primary">{{ $value->price }} DH</div>
+                                <div class="price fw-bold text-primary">
+                                    {{ $value->price }} DH x{{$value->quantity}}
+                                </div>
 
                             </div>
                             <div class="col-md-1 col-2 mt-2 mt-md-0 text-end">
@@ -86,7 +88,7 @@
                 <!-- Continue Shopping -->
                 <!-- Continue Shopping -->
                 <div class="text-center mt-4">
-                    <a href="#" class="btn btn-outline-primary me-2">
+                    <a href="{{ route('homePage') }}" class="btn btn-outline-primary me-2">
                         <i class="fas fa-arrow-left me-2"></i>Continue Shopping
                     </a>
                     <button class="btn btn-outline-danger me-2" id="emptyCartBtn">
@@ -191,9 +193,13 @@
                     </div>
 
                     <div class="card-footer my-5">
-                            <button class="btn btn-primary btn-lg w-100 checkout-btn">
-                                <i class="fas fa-credit-card me-2"></i>Proceed to Checkout
+                        <form action="{{ route('place.order') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="payment_method" value="card"> <!-- set via JS if needed -->
+                            <button type="submit" class="btn btn-primary btn-lg w-100 checkout-btn">
+                                <i class="fas fa-credit-card me-2"></i>Order 
                             </button>
+                        </form>
                     </div>
                 </div>
             </div>

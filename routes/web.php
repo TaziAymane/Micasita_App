@@ -24,6 +24,7 @@ Route::get('/product_categorie/{categorie}',[PagesController::class,'ProductPage
 Route::any('/add-cart',[CartController::class,'addToCart'])->name('addToCart');
 Route::get('/product-cart',[CartController::class,'cart'])->name('product.cart');
 Route::get('/cart-delete/{id}',[CartController::class,'destroy'])->name('cart-delete');
+Route::post('/place-order', [CartController::class, 'placeOrder'])->name('place.order');
 
 
 // Admin

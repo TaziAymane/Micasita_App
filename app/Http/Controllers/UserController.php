@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -48,7 +49,14 @@ class UserController extends Controller
     public function settings(){
         $user = Auth::user();
         $userdata = User::where('id',$user->id)->firstOrFail() ;
+         $orders = Order::with('items') // eager load order items
+                ->where('user_id', Auth::id())
+                ->latest()
+                ->take(5)
+                ->get();
         // dd($userdata);
-        return view('auth.Settings',compact('userdata'));
+        return view('auth.Settings',compact('userdata','orders'));
     }
 }
+
+
