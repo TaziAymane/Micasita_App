@@ -14,9 +14,10 @@ class PagesController extends Controller
      */
     public function HomePage()
     {
-        // $user = Auth::user();
+        
         $menus = Menu::all();
-        // dd($user);
+        $userId = Auth::id(); 
+        // dd($userId);
         return view('components.HomePage',compact('menus'));
     }
 

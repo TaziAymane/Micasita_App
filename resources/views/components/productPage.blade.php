@@ -3,6 +3,7 @@
     Product
 @endsection
 @section('content')
+    <link rel="stylesheet" href="{{ asset('css/productPage.css') }}">
     <div class="app-container">
         <div class="main-content">
             <div class="content-area">
@@ -52,19 +53,15 @@
                             <div class="product-controls">
                                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->product_name }}"
                                     class="product-img" />
-                                
-                                <button class="add-button text-decoration-none add-to-cart" 
-                                    data-product-id="{{ $product->id }}"
-                                    data-product-name="{{ $product->product_name }}"
-                                    data-product-price="{{ $product->price }}"
-                                    data-product-image="{{ $product->image }}"
-                                    data-product-categorie="{{ $product->categorie }}">
+
+                                <button class="add-button text-decoration-none add-to-cart"
+                                    productID="{{ $product->id }}">
                                     Ajouter
                                 </button>
-                                <div class="quantity-controls" style="display: none;">
-                                    <button class="decrement-btn">-</button>
-                                    <span class="quantity">1</span>
-                                    <button class="increment-btn">+</button>
+                                <div class="quantity-controls" style="display: flex;">
+                                    <button class="decrement-btn" data-product-id="{{ $product->id }}">-</button>
+                                    <span class="quantity" data-product-id="{{ $product->id }}">1</span>
+                                    <button class="increment-btn" data-product-id="{{ $product->id }}">+</button>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +83,7 @@
         </div>
     </div>
 
-    <script>
+    {{-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize cart from localStorage
             let cart = JSON.parse(localStorage.getItem('cart')) || {};
@@ -145,6 +142,70 @@
                     cartSummary.style.display = 'none';
                 }
             }
+        });
+    </script> --}}
+@endsection
+@section('js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle quantity controls for all products
+            document.querySelectorAll('.decrement-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-product-id');
+                    const quantityElement = document.querySelector(
+                        `.quantity[data-product-id="${productId}"]`);
+                    let quantity = parseInt(quantityElement.textContent);
+                    if (quantity > 1) {
+                        quantity--;
+                        quantityElement.textContent = quantity;
+                    }
+                });
+            });
+
+            document.querySelectorAll('.increment-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-product-id');
+                    const quantityElement = document.querySelector(
+                        `.quantity[data-product-id="${productId}"]`);
+                    let quantity = parseInt(quantityElement.textContent);
+                    quantity++;
+                    quantityElement.textContent = quantity;
+                });
+            });
+
+            // Handle add to cart with proper quantity
+            $(document).ready(function() {
+                $('.add-to-cart').click(function(e) {
+                    e.preventDefault();
+                    let productId = $(this).attr('productID');
+                    let quantity = $(this).closest('.product-controls').find('.quantity').text();
+
+                    $.ajax({
+                        method: 'post',
+                        url: '/add-cart',
+                        data: {
+                            productID: productId,
+                            quantity: quantity
+                        },
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            Swal.fire({
+                                title: "Add to Cart",
+                                confirmButtonColor: "green",
+                                icon: "success",
+                                draggable: true
+                                }); // Debug
+                            
+                        }
+
+                    });
+                });
+            });
+
+
         });
     </script>
 @endsection

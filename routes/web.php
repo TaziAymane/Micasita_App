@@ -10,19 +10,21 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
 
 Route::get('/Auth',[AuthController::class,'loginfORM'])->name('loginfORM') ;
 Route::post('/login',[AuthController::class,'login'])->name('login') ;
 Route::post('/register',[AuthController::class,'store'])->name('register') ;
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/' ,[PagesController::class,'HomePage'])->name('homePage');
 Route::get('/product_categorie/{categorie}',[PagesController::class,'ProductPage'])->name('ProductPage');
 // Cart route *
-
-Route::get('/add-to-cart/{id}',[CartController::class,'addToCart'])->name('addToCart');
+Route::any('/add-cart',[CartController::class,'addToCart'])->name('addToCart');
 Route::get('/product-cart',[CartController::class,'cart'])->name('product.cart');
-Route::post('/place-order', [CartController::class, 'placeOrder'])->name('placeOrder');
+Route::get('/cart-delete/{id}',[CartController::class,'destroy'])->name('cart-delete');
+
 
 // Admin
 Route::get('/AdminDashboard',[AdminController::class,'index'])->name('admin.dashboard');
@@ -46,17 +48,12 @@ Route::put('/product/update/{id}',[ProductController::class,'update'])->name('pr
 Route::delete('/product/destroy/{id}',[ProductController::class,'destroy'])->name('product.destroy');
 
 
-//Profiles
-// Route::get('/login',[LoginController::class,'index'])->name('show.login');
-// Route::post('/logi-store',[LoginController::class,'login'])->name('profile.login');
-// Route::post('/profile/store',[LoginController::class,'store'])->name('profile.store');
-// Route::get('/logout',[LoginController::class,'logout'])->name('logout');
-// Route::get('/register',[LoginController::class,"register"])->name('profile.register');
-Route::get('/settings',[ProfileController::class,'settings'])->name('settings');
-Route::get('/profiles',[ProfileController::class,'index'])->name('profile.index');
-Route::get('/profile/show/{id}',[ProfileController::class,'show'])->name('profile.show');
-Route::get('/profile/edit/{id}',[ProfileController::class,'edit'])->name('profile.edit');
-Route::put('/profile/update/{id}',[ProfileController::class,'update'])->name('profile.update');
-Route::delete('/profile/destroy/{id}',[ProfileController::class,'destroy'])->name('profile.destroy');
+//User 
+Route::get('/settings',[UserController::class,'settings'])->name('settings');
+Route::get('/users',[UserController::class,'index'])->name('user.index');
+Route::get('/user/show/{id}',[UserController::class,'show'])->name('user.show');
+Route::get('/user/edit/{id}',[UserController::class,'edit'])->name('user.edit');
+Route::put('/user/update/{id}',[UserController::class,'update'])->name('user.update');
+Route::delete('/user/destroy/{id}',[UserController::class,'destroy'])->name('user.destroy');
 
 

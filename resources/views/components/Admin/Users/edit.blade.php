@@ -8,7 +8,7 @@
             <div class="col-md-8 col-lg-6">
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-white border-0 pt-4">
-                        <h2 class="h4 text-center mb-0">Update {{$profile->name}} profile  </h2>
+                        <h2 class="h4 text-center mb-0">Update {{$user->nomComplait}} user  </h2>
                     </div>
                     {{-- Form Errors Alert --}}
                     @if ($errors->any())
@@ -25,30 +25,30 @@
 
                     <div class="card-body px-4 py-3">
                         <form class="needs-validation" method="POST"
-                            action="{{ route('profile.update', $profile->id) }}" enctype="multipart/form-data">
+                            action="{{ route('user.update', $user->id) }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <!-- Name Field -->
                             <div class="mb-3">
                                 <label for="nameInput" class="form-label fw-semibold">
-                                    UserName
+                                    Nom Complait
                                 </label>
-                                <input type="text" class="form-control form-control-lg" name="username"
-                                    value="{{ old('username', $profile->username) }}">
+                                <input type="text" class="form-control form-control-lg" name="nomComplait"
+                                    value="{{ old('nomComplait', $user->nomComplait) }}">
                             </div>
 
                             <!-- Time Take -->
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">
-                                    Phone
+                                    Telephone
                                 </label>
-                                <input type="tel" class="form-control" name="phone" value="{{ old('phone', $profile->phone) }}" />
+                                <input type="tel" class="form-control" name="tele" value="{{ old('tele', $user->tele) }}" />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">
                                     Adress
                                 </label>
-                                <input type="tel" class="form-control" name="adress" value="{{ old('adress', $profile->adress) }}" />
+                                <input type="tel" class="form-control" name="adress" value="{{ old('adress', $user->adress) }}" />
                             </div>
 
                             
@@ -58,7 +58,7 @@
                                 <button type="submit" class="btn btn-primary btn-lg">
                                     Update
                                 </button>
-                                <a href="{{ route('profile.index') }}" class="btn btn-secondary btn-lg">Back</a>
+                                <a href="{{ route('user.index') }}" class="btn btn-secondary btn-lg">Back</a>
                             </div>
                         </form>
                     </div>

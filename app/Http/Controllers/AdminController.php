@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Product;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -14,10 +15,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $countProfiles = Profile::count();
+        $countUsers = User::count();
         $countProduct = Product::count() ;
         $countMenu = Menu::count() ;
-        return view('components.Admin.Statistice',compact('countProfiles','countProduct','countMenu'));
+        return view('components.Admin.Statistice',compact('countUsers','countProduct','countMenu'));
     }
 
     // statistice 

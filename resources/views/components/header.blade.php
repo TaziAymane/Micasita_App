@@ -1,4 +1,6 @@
 <div class="header">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
             <div class="time">18:25</div>
             <div class="location fw-bold mb-3 d-flex align-items-center">
                 <i class="bi bi-geo-alt-fill me-2" style="color: red;"></i>

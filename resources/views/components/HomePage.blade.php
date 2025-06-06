@@ -4,6 +4,8 @@
 @endsection
 
 @section('content')
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     <!-- Main Content Area -->
     <div class="content-area">
         <!-- Categories Swiper Container -->

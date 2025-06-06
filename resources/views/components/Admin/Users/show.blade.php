@@ -8,44 +8,44 @@
             <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-header bg-primary text-white">
-                        <h1 class="h4 mb-0">{{$profile->username}} , Profile</h1>
+                        <h1 class="h4 mb-0">{{$user->nomComplait}} , user</h1>
                     </div>
 
                     <div class="card-body">
                         <div class="list-group list-group-flush">
-                            <div class="list-group-profile">
+                            <div class="list-group-user">
                                 <h5 class="mb-1 text-muted">ID</h5>
-                                <p class="mb-0 fs-5"><b>{{ $profile->id }}</b></p>
+                                <p class="mb-0 fs-5"><b>{{ $user->id }}</b></p>
                             </div>
                             <div class="list-group list-group-flush">
                                 
 
-                                <div class="list-group-profile">
-                                    <h5 class="mb-1 text-muted">Username </h5>
-                                    <p class="mb-0 fs-5"><b>{{ $profile->username }}</b></p>
+                                <div class="list-group-user">
+                                    <h5 class="mb-1 text-muted">Nom Complait </h5>
+                                    <p class="mb-0 fs-5"><b>{{ $user->nomComplait }}</b></p>
                                 </div>
 
-                                <div class="list-group-profile">
-                                    <h5 class="mb-1 text-muted">Phone namber </h5>
+                                <div class="list-group-user">
+                                    <h5 class="mb-1 text-muted">Telephone </h5>
                                     <p class="mb-0 fs-5">
-                                        <p class="mb-0 fs-5"><b>{{ $profile->phone }}</b></p>
+                                        <p class="mb-0 fs-5"><b>{{ $user->tele }}</b></p>
                                     </p>
                                 </div>
-                                 <div class="list-group-profile">
+                                 <div class="list-group-user">
                                     <h5 class="mb-1 text-muted">Adress </h5>
                                     <p class="mb-0 fs-5">
-                                        <p class="mb-0 fs-5"><b>{{ $profile->adress }}</b></p>
+                                        <p class="mb-0 fs-5"><b>{{ $user->adress }}</b></p>
                                     </p>
                                 </div>
-                                <div class="list-group-profile">
+                                <div class="list-group-user">
                                     <h5 class="mb-1 text-muted">Created at   </h5>
-                                    <p class="mb-0 fs-5"><b>{{ $profile->created_at }}</b></p>
+                                    <p class="mb-0 fs-5"><b>{{ $user->created_at }}</b></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="card-footer bg-light">
-                            <a href="{{ route('profile.index') }}" class="btn btn-secondary">
+                            <a href="{{ route('user.index') }}" class="btn btn-secondary">
                                 Back
                             </a>
                         </div>

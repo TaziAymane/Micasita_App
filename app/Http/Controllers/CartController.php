@@ -2,55 +2,65 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Cart;
 use Illuminate\Http\Request;
-use App\Models\Order;
-use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
     public function cart()
     {
-        return view('components.cart');
+        if (Auth::check()) {
+            $data = DB::table('carts')->where('user_id','=',Auth::user()->id)
+            ->join('products','carts.product_id','products.id')
+            ->select('products.*','carts.quantity')
+            ->latest()->paginate(10) ;
+        }else{
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $data = DB::table('carts')->where('user_id','=',$ip)
+            ->join('products','carts.product_id','products.id')
+            ->select('products.*','carts.quantity')
+            ->latest()->paginate(10) ;
+        }
+        return view('components.cart.cart',compact('data'));
     }
 
-    public function placeOrder(Request $request)
-    {
-        $data = $request->validate([
-            'cart' => 'required|array',
-            'notes' => 'nullable|string',
-            'payment_method' => 'required|string',
-        ]);
 
-        $profileId = Auth::id(); // assuming you're using `Auth::guard('web')->user()`
-        if (!$profileId) return response()->json(['error' => 'Unauthenticated'], 401);
+    public function addToCart(Request $request){
+        if ($request->isMethod('post')) {
 
-        $total = 0;
-        foreach ($data['cart'] as $item) {
-            $total += $item['price'] * $item['quantity'];
-        }
-
-        $order = Order::create([
-            'profile_id' => $profileId,
-            'notes' => $data['notes'] ?? '',
-            'payment_method' => $data['payment_method'],
-            'total' => $total,
-        ]);
-
-        foreach ($data['cart'] as $item) {
-            OrderItem::create([
-                'order_id' => $order->id,
-                'product_id' => $item['id'],
-                'quantity' => $item['quantity'],
-                'price' => $item['price'],
+            $quantity = $request->quantity ;
+            $productId = $request->productID ;
+            if(Auth::check()){
+                $cart = Cart::insert([
+                'user_id' =>Auth::user()->id,
+                'product_id' => $productId ,
+                'quantity' => $quantity,
             ]);
-        }
+            }else{
+                $ip = $_SERVER['REMOTE_ADDR'];
+                 $cart = Cart::insert([
+                'user_ip' => $ip,
+                'product_id' => $productId ,
+                'quantity' => $quantity,
+            ]);
+            }
+            
 
-        return response()->json(['message' => 'Order placed successfully']);
+            return response()->json(['data' => 1]) ;
+        }else{
+            return redirect()->route('homePage') ;
+        }
     }
-    public function Order(){
-        $oreders = Order::all() ;
-        return view('components.Admin.Orders.index',compact('oreders')) ;
+
+    public function destroy($id){
+
+        $data = Cart::where('product_id' , '=' , $id)->delete() ;
+       return response()->json(['data' => $data]) ;    
+
+      
     }
+    
 }
+ 

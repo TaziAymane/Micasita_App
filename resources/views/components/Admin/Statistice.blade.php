@@ -16,7 +16,7 @@
                                     <div class="col me-2">
                                         <div class="text-xs fw-bold text-primary text-uppercase mb-1">
                                             Total Users</div>
-                                        <div class="h5 mb-0 fw-bold text-gray-800">{{$countProfiles}}</div>
+                                        <div class="h5 mb-0 fw-bold text-gray-800">{{$countUsers }}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="bi bi-people fs-1 text-primary"></i>

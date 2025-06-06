@@ -1,4 +1,5 @@
                 <!-- Desktop Sidebar -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
                 <div class="sidebar d-none d-md-block">
                     <div class="sidebar-nav">
@@ -11,9 +12,15 @@
                             <div class="sidebar-nav-icon"><i class="fas fa-utensils"></i></div>
                             <div>reservation table</div>
                         </a>
+                         @if (Auth::check())
+                             @php($cart = DB::table('carts')->where('user_id','=',Auth::user()->id)->count('id'))
+                         @else
+                            @php($ip = $_SERVER['REMOTE_ADDR'])
+                            @php($cart = DB::table('carts')->where('user_ip','=',$ip)->count('id'))
+                        @endif
                         <a href="{{ route('product.cart')}}" class="sidebar-nav-item text-decoration-none text-reset">
                             <div class="sidebar-nav-icon"><i class="fas fa-shopping-basket"></i></div>
-                            <div>Panier</div>
+                            <div>Panier ({{ $cart }})</div>
                         </a>
                         {{-- <a href="#" class="sidebar-nav-item text-decoration-none text-reset">
                         <div class="sidebar-nav-icon"><i class="fas fa-star"></i></div>

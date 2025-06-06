@@ -37,5 +37,5 @@
       alert.classList.add('fade-out');
       setTimeout(() => alert.remove(), 500); // Wait for fade to complete before removing
     }
-  }, 1000); // 1 seconds
+  }, 2000); // 2 seconds
 </script>

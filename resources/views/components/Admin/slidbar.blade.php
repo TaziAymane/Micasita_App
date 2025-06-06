@@ -12,7 +12,7 @@
                     
                 </li>
                 <li>
-                    <a href="{{ route('product.index')}}"><i class="bi bi-file-earmark-post me-2"></i> Product</a>
+                    <a href=""><i class="bi bi-file-earmark-post me-2"></i> Product</a>
                 </li>
                 <li>
                     <a href="#"><i class="bi bi-file-earmark-post me-2"></i> Commande</a>
@@ -21,7 +21,7 @@
                     <a href="#"><i class="bi bi-file-earmark-post me-2"></i>Table Reservation </a>
                 </li>
                 <li>
-                    <a href="{{route('profile.index')}}"><i class="bi bi-people me-2"></i> Users</a>
+                    <a href="{{route('user.index')}}"><i class="bi bi-people me-2"></i> Users</a>
                 </li>
                 {{-- <li>
                     <a href="#"><i class="bi bi-gear me-2"></i> Settings</a>

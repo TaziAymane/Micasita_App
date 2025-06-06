@@ -1,6 +1,6 @@
-   @extends('layouts.app')
+   {{-- @extends('layouts.app') --}}
    <!-- Empty Cart Content -->
-    <div class="empty-cart-container">
+    {{-- <div class="empty-cart-container">
         <div class="empty-cart-card">
             <div class="cart-icon">
                 <i class="fas fa-shopping-cart"></i>
@@ -27,7 +27,7 @@
                 {{-- <button class="btn btn-outline-primary btn-browse" >
                     <i class="fas fa-th-large me-2"></i><a href="{{ route('homePage')}}" class="text-decoration-none" style="color: #fff">Menu Categories</a>
                 </button> --}}
-            </div>
+            {{-- </div>
             
             <div class="mt-4">
                 <small class="text-muted">
@@ -35,6 +35,4 @@
                 </small>
             </div>
         </div>
-    </div>
-
-    
+    </div> --}}
