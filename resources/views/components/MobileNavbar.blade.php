@@ -37,12 +37,11 @@
               </div>
           @endauth
           @guest
-              <div class="col nav-item ">
-                  <a href="{{ route('loginfORM') }}" class="sidebar-nav-item text-decoration-none text-reset">
-                      <div class="sidebar-nav-icon"><i class="fas fa-user"></i></div>
+             <div class="col nav-item ">
+                  <a href="{{ route('loginfORM') }}" class="d-block text-decoration-none text-reset">
+                      <div class="nav-icon"><i class="fas fa-user"></i></div>
                       <div>Se connect</div>
                   </a>
-
               </div>
 
           @endguest

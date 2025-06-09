@@ -58,3 +58,9 @@ Route::put('/user/update/{id}',[UserController::class,'update'])->name('user.upd
 Route::delete('/user/destroy/{id}',[UserController::class,'destroy'])->name('user.destroy');
 
 
+// search 
+// Route for handling the form submission
+Route::get('/search', [MenuController::class, 'handleSearch'])->name('search_handler');
+
+// Route to show menu by category
+Route::get('/product_categorie/{category}', [MenuController::class, 'showByCategory'])->name('product_categorie');

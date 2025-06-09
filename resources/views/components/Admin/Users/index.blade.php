@@ -42,11 +42,9 @@
                     <thead class="table-light">
                         <tr>
                             <th scope="col" class="w-5">ID</th>
-                            <th scope="col">UserName</th>
-                            <th scope="col">Phone number</th>
+                            <th scope="col">Nom Complait</th>
+                            <th scope="col">Telephone</th>
                             <th scope="col">Adress</th>
-                            <th scope="col" class="text">Commande</th>
-                            <th scope="col" class="text">Table reservation</th>
                             <th scope="col" class="text-center">Actions</th>
                             
                         </tr>
@@ -64,17 +62,12 @@
                                     </div>
                                 </td>
                                 <td class="text-decoration-none">
-                                    {{ $user->phone }}  
+                                    {{ $user->tele }}  
                                 </td>
                                 <td class="text-decoration-none">
                                     {{ $user->adress }}  
                                 </td>
-                                <td>
-                                    product1
-                                </td>
-                                <td>
-                                    table2 7h->8h
-                                </td>
+                              
                                 <td class="text-center">
                                     <div class="btn-group" role="group">
                                         <a href="{{ route('user.show', $user->id) }}" class="btn btn-sm btn-primary">

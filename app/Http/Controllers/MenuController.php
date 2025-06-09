@@ -108,4 +108,20 @@ class MenuController extends Controller
         return redirect()->route('menu.index')
                    ->with('success', 'item deleted successfully');
     }
+
+// Called when user submits the form (search logic and redirect)
+public function handleSearch(Request $request)
+{
+    $query = $request->input('q');
+
+    return redirect()->route('product_categorie', ['category' => $query]);
+}
+
+// Called when redirected to the route with category in URL
+public function showByCategory($category)
+{
+    $menus = Menu::where('categorie_name', 'like', '%' . $category . '%')->get();
+
+    return view('product-category', compact('menus', 'category'));
+}
 }
