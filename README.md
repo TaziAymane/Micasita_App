@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About this project 
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
@@ -21,41 +21,15 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Images from inside project
+<img width="429" height="869" alt="HOME" src="https://github.com/user-attachments/assets/af402df9-bb19-4f76-a853-bde1f57c0d2c" />
+<img width="434" height="858" alt="PRODUCTpAGE" src="https://github.com/user-attachments/assets/af9a0fea-bd02-4c85-99b3-aac7456169e0" />
+<img width="422" height="851" alt="PRODUCTaDD" src="https://github.com/user-attachments/assets/51b96b7b-4dfc-4c7d-b596-68992fd58474" />
+<img width="436" height="866" alt="SETTINGS" src="https://github.com/user-attachments/assets/c6ae0d7d-b79c-41c0-9921-c2ad2de9b037" />
+<img width="1274" height="896" alt="AdminStatistique" src="https://github.com/user-attachments/assets/2078095c-0d9d-4a3d-b5ea-268e04884ca7" />
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<img width="1279" height="925" alt="Admin-Menu" src="https://github.com/user-attachments/assets/5ee71c4f-590a-4d6f-af65-79de87f46947" />
+<img width="1285" height="900" alt="Admin-User" src="https://github.com/user-attachments/assets/19d94cde-06a6-4a1d-857d-ff72f082c36a" />
+<img width="828" height="668" alt="class" src="https://github.com/user-attachments/assets/10028f4d-43ef-4784-afba-67c3ceeed326" />
+<img width="493" height="512" alt="use3" src="https://github.com/user-attachments/assets/dcb0dca6-d613-4fab-99e7-1811dba1bff2" />
+<img width="502" height="526" alt="USE2" src="https://github.com/user-attachments/assets/06a9bc61-f85c-40f0-a629-e14f7d87e408" />
