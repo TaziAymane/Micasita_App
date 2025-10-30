@@ -9,7 +9,7 @@
 
 ## About this project 
 
-This project is a fulle systeme for selling&manage your resturant .
+This project is a fulle systeme for selling&manage your resturant . <br/>
 -Authontication users
 -Home Page
 -Categorie Page
