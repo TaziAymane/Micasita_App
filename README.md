@@ -27,7 +27,6 @@
 <img width="429" height="869" alt="HOME" src="https://github.com/user-attachments/assets/af402df9-bb19-4f76-a853-bde1f57c0d2c" />
 <img width="434" height="858" alt="PRODUCTpAGE" src="https://github.com/user-attachments/assets/af9a0fea-bd02-4c85-99b3-aac7456169e0" />
 <img width="422" height="851" alt="PRODUCTaDD" src="https://github.com/user-attachments/assets/51b96b7b-4dfc-4c7d-b596-68992fd58474" />
-<img width="436" height="866" alt="SETTINGS" src="https://github.com/user-attachments/assets/c6ae0d7d-b79c-41c0-9921-c2ad2de9b037" />
 <img width="1274" height="896" alt="AdminStatistique" src="https://github.com/user-attachments/assets/2078095c-0d9d-4a3d-b5ea-268e04884ca7" />
 
 <img width="1279" height="925" alt="Admin-Menu" src="https://github.com/user-attachments/assets/5ee71c4f-590a-4d6f-af65-79de87f46947" />
