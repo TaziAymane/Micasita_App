@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About this project 
+# About this project 
 
-# This project is a fulle systeme for selling&manage your resturant . <br/>
+## This project is a fulle systeme for selling&manage your resturant . <br/>
 -Authontication users <br/>
 -Home Page  <br/>
 -Categorie Page  <br/>
