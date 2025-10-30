@@ -9,17 +9,18 @@
 
 ## About this project 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project is a fulle systeme for selling&manage your resturant .
+-Authontication users
+-Home Page
+-Categorie Page
+-Product Page 
+-Add to Card Opiration
+-Panier Page 
+-Admine Dashboard
+-CRUD Opiration 
+-manage users
+-manage product
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Images from inside project
 <img width="429" height="869" alt="HOME" src="https://github.com/user-attachments/assets/af402df9-bb19-4f76-a853-bde1f57c0d2c" />
