@@ -10,16 +10,16 @@
 ## About this project 
 
 This project is a fulle systeme for selling&manage your resturant . <br/>
--Authontication users
--Home Page
--Categorie Page
--Product Page 
--Add to Card Opiration
--Panier Page 
--Admine Dashboard
--CRUD Opiration 
--manage users
--manage product
+-Authontication users <br/>
+-Home Page  <br/>
+-Categorie Page  <br/>
+-Product Page   <br/>
+-Add to Card Opiration  <br/>
+-Panier Page <br/>
+-Admine Dashboard  <br/>
+-CRUD Opiration  <br/>
+-manage users  <br/>
+-manage product <br/>
 
 
 ## Images from inside project
